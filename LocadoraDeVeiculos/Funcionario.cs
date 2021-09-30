@@ -13,5 +13,6 @@ namespace LocadoraDeVeiculos
         public static string funcLogin { get; set; }
         public static string funcSenha { get; set; }
         public static string cargo { get; set; }
+        public static int idCargo { get; set; } = 1;
     }
 }
