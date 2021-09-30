@@ -13,6 +13,8 @@ namespace LocadoraDeVeiculos
 {
     public partial class frmPrincipal : Form
     {
+
+        Form form;
         public frmPrincipal()
         {
             InitializeComponent();
@@ -32,9 +34,34 @@ namespace LocadoraDeVeiculos
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            frmCliente cliente = new frmCliente();
-            cliente.MdiParent = this;
-            cliente.Show();
+            if (form == null)
+            {
+                form = new frmCliente();
+            }
+            else
+            {
+                form.Close();
+                form.Dispose();
+                form = new frmCliente();
+            }
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void btnCarros_Click(object sender, EventArgs e)
+        {
+            if (form == null)
+            {
+                form = new frmCarros();
+            }
+            else
+            {
+                form.Close();
+                form.Dispose();
+                form = new frmCarros();
+            }
+            form.MdiParent = this;
+            form.Show();
         }
     }
 }
