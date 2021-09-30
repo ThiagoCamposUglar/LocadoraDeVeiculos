@@ -26,6 +26,7 @@ namespace LocadoraDeVeiculos
             if (Funcionario.idCargo != 1)
             {
                 btnFuncionarios.Enabled = false;
+                btnCarros.Enabled = false;
             }
         }
 
