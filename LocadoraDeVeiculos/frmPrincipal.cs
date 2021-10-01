@@ -83,5 +83,21 @@ namespace LocadoraDeVeiculos
             form.MdiParent = this;
             form.Show();
         }
+
+        private void btnPendentes_Click(object sender, EventArgs e)
+        {
+            if (form == null)
+            {
+                form = new frmPendentes();
+            }
+            else
+            {
+                form.Close();
+                form.Dispose();
+                form = new frmPendentes();
+            }
+            form.MdiParent = this;
+            form.Show();
+        }
     }
 }

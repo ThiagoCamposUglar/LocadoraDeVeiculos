@@ -30,7 +30,11 @@ namespace LocadoraDeVeiculos
         private void InitializeComponent()
         {
             this.panelNavBar = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.btnFuncionarios = new System.Windows.Forms.Button();
+            this.btnPendentes = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.btnCarros = new System.Windows.Forms.Button();
             this.btnCadRegistro = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
@@ -39,10 +43,6 @@ namespace LocadoraDeVeiculos
             this.label1 = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnPendentes = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.panelNavBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -68,6 +68,21 @@ namespace LocadoraDeVeiculos
             this.panelNavBar.Size = new System.Drawing.Size(226, 450);
             this.panelNavBar.TabIndex = 3;
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(45)))), ((int)(((byte)(51)))));
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(3, 329);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(223, 44);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "FUNCIONÁRIOS";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
             // btnFuncionarios
             // 
             this.btnFuncionarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(45)))), ((int)(((byte)(51)))));
@@ -82,6 +97,54 @@ namespace LocadoraDeVeiculos
             this.btnFuncionarios.TabIndex = 2;
             this.btnFuncionarios.Text = "FUNCIONÁRIOS";
             this.btnFuncionarios.UseVisualStyleBackColor = false;
+            // 
+            // btnPendentes
+            // 
+            this.btnPendentes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(45)))), ((int)(((byte)(51)))));
+            this.btnPendentes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPendentes.FlatAppearance.BorderSize = 0;
+            this.btnPendentes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnPendentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPendentes.ForeColor = System.Drawing.Color.White;
+            this.btnPendentes.Location = new System.Drawing.Point(3, 228);
+            this.btnPendentes.Name = "btnPendentes";
+            this.btnPendentes.Size = new System.Drawing.Size(223, 44);
+            this.btnPendentes.TabIndex = 2;
+            this.btnPendentes.Text = "PENDENTES";
+            this.btnPendentes.UseVisualStyleBackColor = false;
+            this.btnPendentes.Click += new System.EventHandler(this.btnPendentes_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(45)))), ((int)(((byte)(51)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(3, 228);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(223, 44);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "VEÍCULOS";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.btnCarros_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(45)))), ((int)(((byte)(51)))));
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(3, 278);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(223, 44);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "VEÍCULOS";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.btnCarros_Click);
             // 
             // btnCarros
             // 
@@ -183,68 +246,6 @@ namespace LocadoraDeVeiculos
             this.pictureBox1.Size = new System.Drawing.Size(80, 80);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(45)))), ((int)(((byte)(51)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(3, 228);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(223, 44);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "VEÍCULOS";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.btnCarros_Click);
-            // 
-            // btnPendentes
-            // 
-            this.btnPendentes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(45)))), ((int)(((byte)(51)))));
-            this.btnPendentes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPendentes.FlatAppearance.BorderSize = 0;
-            this.btnPendentes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnPendentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPendentes.ForeColor = System.Drawing.Color.White;
-            this.btnPendentes.Location = new System.Drawing.Point(3, 228);
-            this.btnPendentes.Name = "btnPendentes";
-            this.btnPendentes.Size = new System.Drawing.Size(223, 44);
-            this.btnPendentes.TabIndex = 2;
-            this.btnPendentes.Text = "PENDENTES";
-            this.btnPendentes.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(45)))), ((int)(((byte)(51)))));
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(3, 278);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(223, 44);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "VEÍCULOS";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.btnCarros_Click);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(45)))), ((int)(((byte)(51)))));
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(3, 329);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(223, 44);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "FUNCIONÁRIOS";
-            this.button4.UseVisualStyleBackColor = false;
             // 
             // frmPrincipal
             // 

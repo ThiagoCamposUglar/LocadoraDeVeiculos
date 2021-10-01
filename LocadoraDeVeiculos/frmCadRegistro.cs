@@ -122,7 +122,7 @@ namespace LocadoraDeVeiculos
             {
                 if (btnVeiculo.Enabled)
                 {
-                    comandoSql.CommandText = $"select * from tbCarros where modelo like('%{txtBuscar.Text}%') or modelo like('%{txtBuscar.Text}%') or placa like('%{txtBuscar.Text}%') or ano like('%{txtBuscar.Text}%') or cor like('%{txtBuscar.Text}%');";
+                    comandoSql.CommandText = $"select * from tbCarros where carroStatus = 1 and (modelo like('%{txtBuscar.Text}%') or modelo like('%{txtBuscar.Text}%') or placa like('%{txtBuscar.Text}%') or ano like('%{txtBuscar.Text}%') or cor like('%{txtBuscar.Text}%'));";
                 }
                 else
                 {
@@ -165,11 +165,11 @@ namespace LocadoraDeVeiculos
                 {
                     try
                     {
-                        string strInsert = $"";
+                        string strInsert = $"insert into tbRegistrosDeAluguel(idClienteFK, idFuncionarioFK, idCarroFK, dataInicio, idAluguelStatusFK) values ({Convert.ToInt32(lblIdCliente.Text)}, {Funcionario.idFuncionario}, {Convert.ToInt32(lblIdVeiculo.Text)}, '{dtpInicio.Value}', {2});";
                         insert = new SqlCommand(strInsert, conn);
                         insert.ExecuteNonQuery();
 
-                        string strUpdateCar = $"";
+                        string strUpdateCar = $"update tbCarros set carroStatus = {0} where idCarro = {Convert.ToInt32(lblIdVeiculo.Text)};";
                         updateCar = new SqlCommand(strUpdateCar, conn);
                         updateCar.ExecuteNonQuery();
 

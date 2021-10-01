@@ -198,9 +198,10 @@ namespace LocadoraDeVeiculos
             // 
             // dtpInicio
             // 
+            this.dtpInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpInicio.Location = new System.Drawing.Point(80, 156);
             this.dtpInicio.Name = "dtpInicio";
-            this.dtpInicio.Size = new System.Drawing.Size(242, 20);
+            this.dtpInicio.Size = new System.Drawing.Size(100, 20);
             this.dtpInicio.TabIndex = 47;
             // 
             // label1
