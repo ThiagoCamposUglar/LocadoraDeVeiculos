@@ -8,11 +8,11 @@ namespace LocadoraDeVeiculos
 {
     class Funcionario
     {
-        public static int idFuncionario { get; set; } = 1;
+        public static int idFuncionario { get; set; }
         public static string nomeFuncionario { get; set; }
         public static string funcLogin { get; set; }
         public static string funcSenha { get; set; }
         public static string cargo { get; set; }
-        public static int idCargo { get; set; } = 1;
+        public static int idCargo { get; set; }
     }
 }

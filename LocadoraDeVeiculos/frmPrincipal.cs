@@ -33,6 +33,7 @@ namespace LocadoraDeVeiculos
             {
                 btnFuncionarios.Enabled = false;
                 btnCarros.Enabled = false;
+
             }
         }
 
@@ -95,6 +96,22 @@ namespace LocadoraDeVeiculos
                 form.Close();
                 form.Dispose();
                 form = new frmPendentes();
+            }
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void btnFinalizados_Click(object sender, EventArgs e)
+        {
+            if (form == null)
+            {
+                form = new frmFinalizados();
+            }
+            else
+            {
+                form.Close();
+                form.Dispose();
+                form = new frmFinalizados();
             }
             form.MdiParent = this;
             form.Show();

@@ -46,5 +46,58 @@ namespace LocadoraDeVeiculos
                 Conexao.FecharConexao();
             }
         }
+
+        private void dgvPendentes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvPendentes.Rows[e.RowIndex];
+                lblId.Text = row.Cells[0].Value.ToString();
+                lblIdCliente.Text = row.Cells[1].Value.ToString();
+                lblIdVeiculo.Text = row.Cells[3].Value.ToString();
+            }
+            btnFinalizar.Enabled = true;
+        }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = Conexao.ObterConexao();
+            SqlCommand updateRegistro;
+            SqlCommand updateCarro;
+            SqlCommand selectDataInicial;
+
+            try
+            {
+                if (lblId.Text == "")
+                {
+                    MessageBox.Show("Informe o registro.");
+                }
+                else
+                {
+                    if (DialogResult.OK == MessageBox.Show("Tem certeza que deseja finalizar?", "Alterar", MessageBoxButtons.OKCancel, MessageBoxIcon.Question))
+                    {
+                        string strUpdateRegistro = $"update tbRegistrosDeAluguel set dataFim = '{dtpFim.Value}', idAluguelStatusFK = {1} where idAluguel = {Convert.ToInt32(lblId.Text)};";
+                        updateRegistro = new SqlCommand(strUpdateRegistro, conn);
+
+                        string strUpdateCarro = $"update tbCarros set carroStatus = {1} where idCarro = {Convert.ToInt32(lblIdVeiculo.Text)};";
+                        updateCarro = new SqlCommand(strUpdateCarro, conn);
+
+                        updateCarro.ExecuteNonQuery();
+                        updateRegistro.ExecuteNonQuery();
+
+                        MessageBox.Show("Finalizado com sucesso");
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Conexao.FecharConexao();
+            }
+        }
     }
 }

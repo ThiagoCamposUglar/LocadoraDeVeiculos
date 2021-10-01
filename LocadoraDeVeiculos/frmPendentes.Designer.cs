@@ -32,9 +32,9 @@ namespace LocadoraDeVeiculos
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtCliente = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtNome = new System.Windows.Forms.TextBox();
+            this.txtVeiculo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,6 +42,8 @@ namespace LocadoraDeVeiculos
             this.dgvPendentes = new System.Windows.Forms.DataGridView();
             this.dtpFim = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblIdVeiculo = new System.Windows.Forms.Label();
+            this.lblIdCliente = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPendentes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,12 +74,13 @@ namespace LocadoraDeVeiculos
             this.label6.TabIndex = 42;
             this.label6.Text = "PENDENTES";
             // 
-            // txtEmail
+            // txtCliente
             // 
-            this.txtEmail.Location = new System.Drawing.Point(106, 110);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(185, 20);
-            this.txtEmail.TabIndex = 41;
+            this.txtCliente.Location = new System.Drawing.Point(106, 110);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.ReadOnly = true;
+            this.txtCliente.Size = new System.Drawing.Size(185, 20);
+            this.txtCliente.TabIndex = 41;
             // 
             // label5
             // 
@@ -89,12 +92,13 @@ namespace LocadoraDeVeiculos
             this.label5.TabIndex = 36;
             this.label5.Text = "Cliente:";
             // 
-            // txtNome
+            // txtVeiculo
             // 
-            this.txtNome.Location = new System.Drawing.Point(106, 84);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(185, 20);
-            this.txtNome.TabIndex = 38;
+            this.txtVeiculo.Location = new System.Drawing.Point(106, 84);
+            this.txtVeiculo.Name = "txtVeiculo";
+            this.txtVeiculo.ReadOnly = true;
+            this.txtVeiculo.Size = new System.Drawing.Size(185, 20);
+            this.txtVeiculo.TabIndex = 38;
             // 
             // label2
             // 
@@ -133,6 +137,7 @@ namespace LocadoraDeVeiculos
             this.btnFinalizar.TabIndex = 27;
             this.btnFinalizar.Text = "FINALIZAR";
             this.btnFinalizar.UseVisualStyleBackColor = true;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
             // dgvPendentes
             // 
@@ -142,6 +147,7 @@ namespace LocadoraDeVeiculos
             this.dgvPendentes.RowTemplate.ReadOnly = true;
             this.dgvPendentes.Size = new System.Drawing.Size(546, 188);
             this.dgvPendentes.TabIndex = 25;
+            this.dgvPendentes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPendentes_CellDoubleClick);
             // 
             // dtpFim
             // 
@@ -161,19 +167,39 @@ namespace LocadoraDeVeiculos
             this.label3.TabIndex = 48;
             this.label3.Text = "Devolução:";
             // 
+            // lblIdVeiculo
+            // 
+            this.lblIdVeiculo.AutoSize = true;
+            this.lblIdVeiculo.Location = new System.Drawing.Point(297, 84);
+            this.lblIdVeiculo.Name = "lblIdVeiculo";
+            this.lblIdVeiculo.Size = new System.Drawing.Size(35, 13);
+            this.lblIdVeiculo.TabIndex = 50;
+            this.lblIdVeiculo.Text = "label4";
+            // 
+            // lblIdCliente
+            // 
+            this.lblIdCliente.AutoSize = true;
+            this.lblIdCliente.Location = new System.Drawing.Point(297, 110);
+            this.lblIdCliente.Name = "lblIdCliente";
+            this.lblIdCliente.Size = new System.Drawing.Size(35, 13);
+            this.lblIdCliente.TabIndex = 50;
+            this.lblIdCliente.Text = "label4";
+            // 
             // frmPendentes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(570, 446);
+            this.Controls.Add(this.lblIdCliente);
+            this.Controls.Add(this.lblIdVeiculo);
             this.Controls.Add(this.dtpFim);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtCliente);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtNome);
+            this.Controls.Add(this.txtVeiculo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.label1);
@@ -195,9 +221,9 @@ namespace LocadoraDeVeiculos
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.TextBox txtVeiculo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Label label1;
@@ -205,5 +231,7 @@ namespace LocadoraDeVeiculos
         private System.Windows.Forms.DataGridView dgvPendentes;
         private System.Windows.Forms.DateTimePicker dtpFim;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblIdVeiculo;
+        private System.Windows.Forms.Label lblIdCliente;
     }
 }
