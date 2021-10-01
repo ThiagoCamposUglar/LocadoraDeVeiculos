@@ -56,7 +56,6 @@ namespace LocadoraDeVeiculos
 
                         LimparCampos();
                         DesabilitarCampos();
-                        btnNovo.Enabled = true;
                     }
                     catch (Exception ex)
                     {

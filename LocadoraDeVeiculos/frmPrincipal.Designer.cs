@@ -32,22 +32,30 @@ namespace LocadoraDeVeiculos
             this.panelNavBar = new System.Windows.Forms.Panel();
             this.btnFuncionarios = new System.Windows.Forms.Button();
             this.btnCarros = new System.Windows.Forms.Button();
-            this.btnRegistros = new System.Windows.Forms.Button();
+            this.btnCadRegistro = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.lblCargo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnPendentes = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.panelNavBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelNavBar
             // 
+            this.panelNavBar.Controls.Add(this.button4);
             this.panelNavBar.Controls.Add(this.btnFuncionarios);
+            this.panelNavBar.Controls.Add(this.btnPendentes);
+            this.panelNavBar.Controls.Add(this.button1);
+            this.panelNavBar.Controls.Add(this.button3);
             this.panelNavBar.Controls.Add(this.btnCarros);
-            this.panelNavBar.Controls.Add(this.btnRegistros);
+            this.panelNavBar.Controls.Add(this.btnCadRegistro);
             this.panelNavBar.Controls.Add(this.btnClientes);
             this.panelNavBar.Controls.Add(this.label2);
             this.panelNavBar.Controls.Add(this.lblCargo);
@@ -68,7 +76,7 @@ namespace LocadoraDeVeiculos
             this.btnFuncionarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnFuncionarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFuncionarios.ForeColor = System.Drawing.Color.White;
-            this.btnFuncionarios.Location = new System.Drawing.Point(3, 278);
+            this.btnFuncionarios.Location = new System.Drawing.Point(3, 329);
             this.btnFuncionarios.Name = "btnFuncionarios";
             this.btnFuncionarios.Size = new System.Drawing.Size(223, 44);
             this.btnFuncionarios.TabIndex = 2;
@@ -83,7 +91,7 @@ namespace LocadoraDeVeiculos
             this.btnCarros.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnCarros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCarros.ForeColor = System.Drawing.Color.White;
-            this.btnCarros.Location = new System.Drawing.Point(3, 228);
+            this.btnCarros.Location = new System.Drawing.Point(3, 279);
             this.btnCarros.Name = "btnCarros";
             this.btnCarros.Size = new System.Drawing.Size(223, 44);
             this.btnCarros.TabIndex = 2;
@@ -91,20 +99,21 @@ namespace LocadoraDeVeiculos
             this.btnCarros.UseVisualStyleBackColor = false;
             this.btnCarros.Click += new System.EventHandler(this.btnCarros_Click);
             // 
-            // btnRegistros
+            // btnCadRegistro
             // 
-            this.btnRegistros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(45)))), ((int)(((byte)(51)))));
-            this.btnRegistros.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRegistros.FlatAppearance.BorderSize = 0;
-            this.btnRegistros.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnRegistros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistros.ForeColor = System.Drawing.Color.White;
-            this.btnRegistros.Location = new System.Drawing.Point(3, 178);
-            this.btnRegistros.Name = "btnRegistros";
-            this.btnRegistros.Size = new System.Drawing.Size(223, 44);
-            this.btnRegistros.TabIndex = 2;
-            this.btnRegistros.Text = "REGISTROS";
-            this.btnRegistros.UseVisualStyleBackColor = false;
+            this.btnCadRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(45)))), ((int)(((byte)(51)))));
+            this.btnCadRegistro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCadRegistro.FlatAppearance.BorderSize = 0;
+            this.btnCadRegistro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnCadRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadRegistro.ForeColor = System.Drawing.Color.White;
+            this.btnCadRegistro.Location = new System.Drawing.Point(3, 178);
+            this.btnCadRegistro.Name = "btnCadRegistro";
+            this.btnCadRegistro.Size = new System.Drawing.Size(223, 44);
+            this.btnCadRegistro.TabIndex = 2;
+            this.btnCadRegistro.Text = "CADASTRO DE REGISTROS";
+            this.btnCadRegistro.UseVisualStyleBackColor = false;
+            this.btnCadRegistro.Click += new System.EventHandler(this.btnRegistros_Click);
             // 
             // btnClientes
             // 
@@ -175,6 +184,68 @@ namespace LocadoraDeVeiculos
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(45)))), ((int)(((byte)(51)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(3, 228);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(223, 44);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "VEÍCULOS";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.btnCarros_Click);
+            // 
+            // btnPendentes
+            // 
+            this.btnPendentes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(45)))), ((int)(((byte)(51)))));
+            this.btnPendentes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPendentes.FlatAppearance.BorderSize = 0;
+            this.btnPendentes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnPendentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPendentes.ForeColor = System.Drawing.Color.White;
+            this.btnPendentes.Location = new System.Drawing.Point(3, 228);
+            this.btnPendentes.Name = "btnPendentes";
+            this.btnPendentes.Size = new System.Drawing.Size(223, 44);
+            this.btnPendentes.TabIndex = 2;
+            this.btnPendentes.Text = "PENDENTES";
+            this.btnPendentes.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(45)))), ((int)(((byte)(51)))));
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(3, 278);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(223, 44);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "VEÍCULOS";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.btnCarros_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(45)))), ((int)(((byte)(51)))));
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(3, 329);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(223, 44);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "FUNCIONÁRIOS";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -204,9 +275,13 @@ namespace LocadoraDeVeiculos
         private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Button btnFuncionarios;
         private System.Windows.Forms.Button btnCarros;
-        private System.Windows.Forms.Button btnRegistros;
+        private System.Windows.Forms.Button btnCadRegistro;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnPendentes;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
     }
 }
 

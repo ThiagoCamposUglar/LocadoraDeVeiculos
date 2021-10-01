@@ -23,6 +23,10 @@ namespace LocadoraDeVeiculos
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             btnClientes.Width = panelNavBar.Width;
+            btnCarros.Width = panelNavBar.Width;
+            btnCadRegistro.Width = panelNavBar.Width;
+            btnFuncionarios.Width = panelNavBar.Width;
+            btnPendentes.Width = panelNavBar.Width;
             lblNome.Text = Funcionario.nomeFuncionario;
             lblCargo.Text = Funcionario.cargo;
             if (Funcionario.idCargo != 1)
@@ -59,6 +63,22 @@ namespace LocadoraDeVeiculos
                 form.Close();
                 form.Dispose();
                 form = new frmCarros();
+            }
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void btnRegistros_Click(object sender, EventArgs e)
+        {
+            if (form == null)
+            {
+                form = new frmCadRegistro();
+            }
+            else
+            {
+                form.Close();
+                form.Dispose();
+                form = new frmCadRegistro();
             }
             form.MdiParent = this;
             form.Show();

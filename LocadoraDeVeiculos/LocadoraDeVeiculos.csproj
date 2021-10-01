@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexao.cs" />
+    <Compile Include="frmCadRegistro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCadRegistro.Designer.cs">
+      <DependentUpon>frmCadRegistro.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCarros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     <Compile Include="Funcionario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCadRegistro.resx">
+      <DependentUpon>frmCadRegistro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCarros.resx">
       <DependentUpon>frmCarros.cs</DependentUpon>
     </EmbeddedResource>
