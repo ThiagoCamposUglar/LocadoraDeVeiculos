@@ -260,11 +260,10 @@ namespace LocadoraDeVeiculos
             // txtValorDiaria
             // 
             this.txtValorDiaria.Location = new System.Drawing.Point(97, 167);
-            this.txtValorDiaria.Mask = "999.99";
+            this.txtValorDiaria.Mask = "9999";
             this.txtValorDiaria.Name = "txtValorDiaria";
             this.txtValorDiaria.Size = new System.Drawing.Size(99, 20);
             this.txtValorDiaria.TabIndex = 39;
-            this.txtValorDiaria.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // label9
             // 

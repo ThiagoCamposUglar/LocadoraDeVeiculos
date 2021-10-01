@@ -55,6 +55,7 @@ namespace LocadoraDeVeiculos
                 lblId.Text = row.Cells[0].Value.ToString();
                 lblIdCliente.Text = row.Cells[1].Value.ToString();
                 lblIdVeiculo.Text = row.Cells[3].Value.ToString();
+                dtpInicio.Value = Convert.ToDateTime(row.Cells[4].Value);
             }
             btnFinalizar.Enabled = true;
         }
@@ -64,7 +65,6 @@ namespace LocadoraDeVeiculos
             SqlConnection conn = Conexao.ObterConexao();
             SqlCommand updateRegistro;
             SqlCommand updateCarro;
-            SqlCommand selectDataInicial;
 
             try
             {
@@ -76,11 +76,25 @@ namespace LocadoraDeVeiculos
                 {
                     if (DialogResult.OK == MessageBox.Show("Tem certeza que deseja finalizar?", "Alterar", MessageBoxButtons.OKCancel, MessageBoxIcon.Question))
                     {
-                        string strUpdateRegistro = $"update tbRegistrosDeAluguel set dataFim = '{dtpFim.Value}', idAluguelStatusFK = {1} where idAluguel = {Convert.ToInt32(lblId.Text)};";
+                        SqlCommand selectDiaria;
+                        string strSelectDiaria = $"select valorDiaria from tbCarros where idCarro = {Convert.ToInt32(lblIdVeiculo.Text)};";
+
+                        selectDiaria = new SqlCommand(strSelectDiaria, conn);
+                        SqlDataReader dataReader = selectDiaria.ExecuteReader();
+
+                        dataReader.Read();
+                        double valorDiaria = Convert.ToDouble(dataReader["valorDiaria"]);
+                        TimeSpan ts = dtpFim.Value.Subtract(dtpInicio.Value);
+                        double valorFinal = Convert.ToInt32(ts.TotalDays) * valorDiaria;
+                        dataReader.Close();
+
+
+                        string strUpdateRegistro = $"update tbRegistrosDeAluguel set dataFim = '{dtpFim.Value}', valorAluguel = {valorFinal}, idAluguelStatusFK = {1} where idAluguel = {Convert.ToInt32(lblId.Text)};";
                         updateRegistro = new SqlCommand(strUpdateRegistro, conn);
 
                         string strUpdateCarro = $"update tbCarros set carroStatus = {1} where idCarro = {Convert.ToInt32(lblIdVeiculo.Text)};";
                         updateCarro = new SqlCommand(strUpdateCarro, conn);
+
 
                         updateCarro.ExecuteNonQuery();
                         updateRegistro.ExecuteNonQuery();
@@ -89,10 +103,9 @@ namespace LocadoraDeVeiculos
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                MessageBox.Show(ex.Message);
             }
             finally
             {

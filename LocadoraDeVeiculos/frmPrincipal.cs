@@ -116,5 +116,10 @@ namespace LocadoraDeVeiculos
             form.MdiParent = this;
             form.Show();
         }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }

@@ -44,6 +44,8 @@ namespace LocadoraDeVeiculos
             this.label3 = new System.Windows.Forms.Label();
             this.lblIdVeiculo = new System.Windows.Forms.Label();
             this.lblIdCliente = new System.Windows.Forms.Label();
+            this.dtpInicio = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPendentes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -152,7 +154,7 @@ namespace LocadoraDeVeiculos
             // dtpFim
             // 
             this.dtpFim.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFim.Location = new System.Drawing.Point(106, 136);
+            this.dtpFim.Location = new System.Drawing.Point(261, 135);
             this.dtpFim.Name = "dtpFim";
             this.dtpFim.Size = new System.Drawing.Size(100, 20);
             this.dtpFim.TabIndex = 49;
@@ -185,13 +187,32 @@ namespace LocadoraDeVeiculos
             this.lblIdCliente.TabIndex = 50;
             this.lblIdCliente.Text = "label4";
             // 
+            // dtpInicio
+            // 
+            this.dtpInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpInicio.Location = new System.Drawing.Point(105, 136);
+            this.dtpInicio.Name = "dtpInicio";
+            this.dtpInicio.Size = new System.Drawing.Size(100, 20);
+            this.dtpInicio.TabIndex = 49;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(222, 141);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(22, 13);
+            this.label4.TabIndex = 51;
+            this.label4.Text = "até";
+            // 
             // frmPendentes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(570, 446);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.lblIdCliente);
             this.Controls.Add(this.lblIdVeiculo);
+            this.Controls.Add(this.dtpInicio);
             this.Controls.Add(this.dtpFim);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtBuscar);
@@ -233,5 +254,7 @@ namespace LocadoraDeVeiculos
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblIdVeiculo;
         private System.Windows.Forms.Label lblIdCliente;
+        private System.Windows.Forms.DateTimePicker dtpInicio;
+        private System.Windows.Forms.Label label4;
     }
 }

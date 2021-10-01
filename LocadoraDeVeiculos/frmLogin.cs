@@ -21,6 +21,7 @@ namespace LocadoraDeVeiculos
         public void frmLogin_Load(object sender, EventArgs e)
         {
             txtLogin.Focus();
+            txtSenha.PasswordChar = '*';
         }
 
         public void btnLogar_Click(object sender, EventArgs e)
